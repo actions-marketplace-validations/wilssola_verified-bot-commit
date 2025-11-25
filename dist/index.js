@@ -37125,8 +37125,9 @@ async function run() {
         const execOpts = { cwd: workspace };
         let execOutput = '';
         coreExports.startGroup('🪁 Getting changed files...');
+        const forceAdd = coreExports.getBooleanInput('force-add');
         if (autoStage)
-            await execExports.exec('git', ['add', '-A'], execOpts);
+            await execExports.exec('git', ['add', '-A', forceAdd ? '-f' : ''], execOpts);
         await execExports.exec('git', ['diff', '--cached', '--name-only'], {
             ...execOpts,
             listeners: {

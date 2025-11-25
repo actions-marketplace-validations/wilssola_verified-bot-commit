@@ -60,7 +60,8 @@ export async function run(): Promise<void> {
 
     core.startGroup('🪁 Getting changed files...')
     const forceAdd = core.getBooleanInput('force-add')
-    if (autoStage) await exec.exec('git', ['add', '-A', forceAdd ? '-f' : ''], execOpts)
+    if (autoStage)
+      await exec.exec('git', ['add', '-A', forceAdd ? '-f' : ''], execOpts)
     await exec.exec('git', ['diff', '--cached', '--name-only'], {
       ...execOpts,
       listeners: {
