@@ -32,6 +32,10 @@ inputs:
     description: Force push the commit
     required: false
     default: 'false'
+  force-add:
+    description: Force add files with the commit
+    required: false
+    default: 'false'
   if-no-commit:
     description: Set the behavior when no commit is made
     required: false
