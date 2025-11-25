@@ -1,4 +1,4 @@
-name: verified-bot-commit
+name: verified-bot-commit-with-git-add-force
 description: GitHub Action for creating signed and verified bot commits
 author: Kyle Colantonio
 
